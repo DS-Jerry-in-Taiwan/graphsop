@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtualenv
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Streamlit
+.streamlit/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test/Temp
+*.tmp
+*.bak
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Secrets
+*.env
+.env.*
+secrets.*
+
+# Agent Context (local only)
+docs/agent_context/
