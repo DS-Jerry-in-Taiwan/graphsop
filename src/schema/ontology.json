@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {
+      "type": "Device",
+      "description": "Represents a physical or logical camera device."
+    },
+    {
+      "type": "Action",
+      "description": "An operation or command performed on the device (e.g., Adjust_Pan, Enable_Privacy_Mask)."
+    },
+    {
+      "type": "Parameter",
+      "description": "A specific property or value related to a device or action (e.g., Max_Pan_Angle, Zoom_Limit, Temperature)."
+    },
+    {
+      "type": "Constraint",
+      "description": "A rule or restriction applied to actions or device states (e.g., Privacy_Zone, Max_Pan, Night_Mode_Required)."
+    },
+    {
+      "type": "Location",
+      "description": "A physical or logical area relevant to device operation (e.g., Zone-B, Rest Area)."
+    },
+    {
+      "type": "SOP_Step",
+      "description": "A step in a standard operating procedure."
+    },
+    {
+      "type": "Validation_Metric",
+      "description": "A metric or standard used to validate actions or device states."
+    }
+  ],
+  "edges": [
+    {
+      "type": "PERFORMED_ON",
+      "from": "Action",
+      "to": "Device",
+      "description": "Indicates the action is performed on the device."
+    },
+    {
+      "type": "HAS_CONSTRAINT",
+      "from": "Device",
+      "to": "Constraint",
+      "description": "Device has a constraint (e.g., Max_Pan, Privacy_Zone)."
+    },
+    {
+      "type": "HAS_CONSTRAINT",
+      "from": "Action",
+      "to": "Constraint",
+      "description": "Action is subject to a constraint."
+    },
+    {
+      "type": "NEXT_STEP",
+      "from": "SOP_Step",
+      "to": "SOP_Step",
+      "description": "Defines the sequence of SOP steps."
+    },
+    {
+      "type": "LOCATED_AT",
+      "from": "Device",
+      "to": "Location",
+      "description": "Device is located at a specific location."
+    },
+    {
+      "type": "LOCATED_AT",
+      "from": "Action",
+      "to": "Location",
+      "description": "Action is performed at a specific location."
+    },
+    {
+      "type": "REQUIRES_VALIDATION",
+      "from": "Action",
+      "to": "Validation_Metric",
+      "description": "Action requires validation by a metric."
+    },
+    {
+      "type": "REQUIRES_VALIDATION",
+      "from": "Device",
+      "to": "Validation_Metric",
+      "description": "Device state requires validation."
+    }
+  ],
+  "logic_notes": [
+    "Constraints can be applied to both Device and Action nodes.",
+    "To express 'Action A is forbidden under Condition B', create an Action node, a Constraint node, and link them with HAS_CONSTRAINT.",
+    "SOP_Step nodes are sequenced using NEXT_STEP edges; branching/loops can be represented by multiple NEXT_STEP edges.",
+    "Validation_Metric nodes ensure traceability from Action to standard/criteria."
+  ]
+}
