@@ -1,46 +1,44 @@
-# Python
-__pycache__/
 *.pyc
-*.pyo
-*.pyd
-*.db
+__pycache__/
+.env
+.env.*
 *.sqlite3
-
-# Virtualenv
+*.log
+.vscode/
 .venv/
-env/
-venv/
-ENV/
+.DS_Store
+node_modules/
+docs/manuals/
+docs/schema/
+*.db
+*.pkl
+*.bak
+*.swp
+.idea/
 *.egg-info/
+coverage/
 dist/
 build/
-
-# Streamlit
-.streamlit/
-
-# VSCode
-.vscode/
-*.code-workspace
-
-# OS/Editor
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-
-# Test/Temp
+*.cache
 *.tmp
-*.bak
+*.lock
+*.pid
+*.sock
+*.crt
+*.pem
+*.key
+*.test
+*.out
+*.old
+*.orig
+*.zip
+*.tar.gz
+*.tgz
+*.tar
+*.ipynb_checkpoints/
+*.mypy_cache/
+*.pytest_cache/
+*.tox/
+*.coverage
+*.py[cod]
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
-
-# Secrets
-*.env
-.env.*
-secrets.*
-
-# Agent Context (local only)
-docs/agent_context/
